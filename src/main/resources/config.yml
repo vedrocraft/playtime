@@ -1,0 +1,6 @@
+configuration:
+  reload-message: '<green>Плагин перезапущен.'
+
+  change-message: '<gray>Вы изменили собственное время на {time}.'
+  target-change-message: '<gray>Вы изменили время игрока {player} на {time}.'
+  reset-message: '<green>Вы успешно установили свое время как на сервере.'
