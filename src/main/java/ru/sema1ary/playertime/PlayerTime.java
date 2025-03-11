@@ -2,10 +2,10 @@ package ru.sema1ary.playertime;
 
 import org.bukkit.plugin.java.JavaPlugin;
 import ru.sema1ary.playertime.command.PlayerTimeCommand;
-import ru.vidoskim.bukkit.service.ConfigService;
-import ru.vidoskim.bukkit.service.impl.ConfigServiceImpl;
-import ru.vidoskim.bukkit.util.LiteCommandUtil;
-import service.ServiceManager;
+import ru.sema1ary.vedrocraftapi.command.LiteCommandBuilder;
+import ru.sema1ary.vedrocraftapi.service.ConfigService;
+import ru.sema1ary.vedrocraftapi.service.ServiceManager;
+import ru.sema1ary.vedrocraftapi.service.impl.ConfigServiceImpl;
 
 public final class PlayerTime extends JavaPlugin {
 
@@ -15,8 +15,9 @@ public final class PlayerTime extends JavaPlugin {
 
         ServiceManager.registerService(ConfigService.class, new ConfigServiceImpl(this));
 
-        new LiteCommandUtil().create("playertime",
-            new PlayerTimeCommand(ServiceManager.getService(ConfigService.class)));
+        LiteCommandBuilder.builder()
+                .commands(new PlayerTimeCommand(ServiceManager.getService(ConfigService.class)))
+                .build();
     }
 
     @Override

@@ -8,10 +8,9 @@ import dev.rollczi.litecommands.annotations.execute.Execute;
 import dev.rollczi.litecommands.annotations.permission.Permission;
 import lombok.RequiredArgsConstructor;
 import net.kyori.adventure.text.minimessage.MiniMessage;
-import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import ru.vidoskim.bukkit.service.ConfigService;
+import ru.sema1ary.vedrocraftapi.service.ConfigService;
 
 @RequiredArgsConstructor
 @Command(name = "playertime", aliases = {"ptime", "player-time", "pt"})
