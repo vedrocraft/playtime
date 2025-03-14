@@ -28,7 +28,6 @@ public class PlayerTimeCommand {
 
     @Async
     @Execute
-    @Permission("playertime.use")
     void execute(@Context Player sender, @Arg("время") long time) {
         sender.setPlayerTime(time, false);
         sender.sendMessage(miniMessage.deserialize(
@@ -38,7 +37,6 @@ public class PlayerTimeCommand {
 
     @Async
     @Execute
-    @Permission("playertime.use")
     void execute(@Context Player sender) {
         sender.resetPlayerTime();
         sender.sendMessage(miniMessage.deserialize(configService.get("reset-message")));
@@ -46,7 +44,7 @@ public class PlayerTimeCommand {
 
     @Async
     @Execute
-    @Permission("playertime.use.other")
+    @Permission("playertime.other")
     void execute(@Context CommandSender sender, @Arg("игрок") Player target
             , @Arg("время") long time) {
         target.setPlayerTime(time, false);
